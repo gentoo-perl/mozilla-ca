@@ -1,18 +1,10 @@
 package Mozilla::CA;
 
 use strict;
-our $VERSION = '20160104';
-
-use Cwd ();
-use File::Spec ();
-use File::Basename qw(dirname);
+our $VERSION = '20999999';
 
 sub SSL_ca_file {
-    my $file = File::Spec->catfile(dirname(__FILE__), "CA", "cacert.pem");
-    if (!File::Spec->file_name_is_absolute($file)) {
-	$file = File::Spec->catfile(Cwd::cwd(), $file);
-    }
-    return $file;
+    return "/etc/ssl/certs/ca-certificates.crt";
 }
 
 1;
@@ -41,9 +33,13 @@ Mozilla::CA - Mozilla's CA cert bundle in PEM format
 
 =head1 DESCRIPTION
 
-Mozilla::CA provides a copy of Mozilla's bundle of Certificate Authority
-certificates in a form that can be consumed by modules and libraries
-based on OpenSSL.
+The original Mozilla::CA package provided a copy of Mozilla's bundle 
+of Certificate Authority certificates in a form that can be consumed 
+by modules and libraries based on OpenSSL.
+
+This much-simplified Gentoo stub version does not contain any certificate
+files and instead just points to the systemwide installation, thus
+simplifying security maintenance.
 
 The module provide a single function:
 
@@ -54,10 +50,6 @@ The module provide a single function:
 Returns the absolute path to the Mozilla's CA cert bundle PEM file.
 
 =back
-
-=head1 SEE ALSO
-
-L<http://curl.haxx.se/docs/caextract.html>
 
 =head1 LICENSE
 

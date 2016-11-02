@@ -5,14 +5,9 @@ WriteMakefile(
    NAME => "Mozilla::CA",
    VERSION_FROM => "lib/Mozilla/CA.pm",
    ABSTRACT_FROM => "lib/Mozilla/CA.pm",
-   AUTHOR => 'Gisle Aas <gisle@activestate.com>',
+   AUTHOR => 'Andreas K. Huettel <dilfridge@gentoo.org>',
    LICENSE => 'mozilla_2_0',
    MIN_PERL_VERSION => 5.006,
-   META_MERGE => {
-       resources => {
-	   repository => 'http://github.com/gisle/mozilla-ca',
-       },
-   },
    BUILD_REQUIRES => {
        Test => 0,
    },

@@ -1,5 +1,6 @@
 NAME
     Mozilla::CA - Mozilla's CA cert bundle in PEM format
+    *** GENTOO STUB VERSION, SEE NOTES BELOW ***
 
 SYNOPSIS
         use IO::Socket::SSL;
@@ -17,7 +18,7 @@ SYNOPSIS
             || die "hostname verification failure";
 
 DESCRIPTION
-    Mozilla::CA provides a copy of Mozilla's bundle of Certificate Authority
+    Mozilla::CA originally provided a copy of Mozilla's bundle of Certificate Authority
     certificates in a form that can be consumed by modules and libraries
     based on OpenSSL.
 
@@ -26,8 +27,8 @@ DESCRIPTION
     SSL_ca_file()
         Returns the absolute path to the Mozilla's CA cert bundle PEM file.
 
-SEE ALSO
-    <http://curl.haxx.se/docs/caextract.html>
+    This version does not contain any certificate files and instead points
+    to the Gentoo central installation location.
 
 LICENSE
     For the bundled Mozilla CA PEM file the following applies:
